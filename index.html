@@ -4,21 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>For Vanshika - BTS Vibes</title>
-<link href="https://fonts.googleapis.com/css2?family=Zeyada&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Zeyada&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       padding: 0;
       background: linear-gradient(145deg, #d1c4e9, #f3e5f5);
       font-family: 'Zeyada', cursive;
-      display: flex24e2
+      display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 100vh;
       flex-direction: column;
+      min-height: 100vh;
       text-align: center;
       color: #4a148c;
-      22overflow: scroll;
+      overflow-x: hidden;
     }
 
     h1 {
@@ -35,7 +35,7 @@
       border-radius: 30px;
       overflow: hidden;
       box-shadow: 0 0 40px rgba(137, 96, 185, 0.4);
-      margin: 20px 0;
+      margin: 30px 0 10px;
     }
 
     .image-wrapper img {
@@ -49,7 +49,7 @@
     }
 
     .buttons {
-      margin-top: 15px;
+      margin-bottom: 25px;
     }
 
     .buttons button {
@@ -74,6 +74,7 @@
       font-size: 1.4em;
       color: #4a148c;
       margin-top: 25px;
+      max-width: 90%;
     }
 
     @keyframes fadeIn {
@@ -83,83 +84,65 @@
   </style>
 </head>
 <body>
-  <br>
-  <br>
   <h1>💜🖤</h1>
-<br>
-<br>
-<br>
   <h1>Hey, Vanshika</h1>
 
   <div class="note">
     Like a BTS song – magical, emotional, unforgettable.<br>
     You're a melody in this world, Vanshika.
     <br> 
-    A little magical surprise, just for you!
-One from imagination, one from reality
+    A little magical surprise, just for you!<br>
+    One from imagination, one from reality
   </div>
-<br>
+
   <h1>Look at these ↓</h1>
-  <div class="image-wrapper">
-    <img src="g1.jpg" id="ghibliImg" class="active" alt="Ghibli Art Style">
-    <img src="r1.jpg" id="realImg" alt="Real Vanshika">
-  </div>
 
+  <!-- IMAGE BLOCKS -->
+  <div class="image-wrapper" id="set1">
+    <img src="g1.jpg" class="active" alt="Ghibli Art Style">
+    <img src="r1.jpg" alt="Real Vanshika">
+  </div>
   <div class="buttons">
-    <button onclick="showImage('ghibli')">Ghibli Style</button>
-    <button onclick="showImage('real')">Real You</button>
+    <button onclick="showImage('set1', 0)">Ghibli Style</button>
+    <button onclick="showImage('set1', 1)">Real You</button>
   </div>
 
-<br>
-
-  <div class="image-wrapper">
-    <img src="g2.jpg" id="ghibliImg" class="active" alt="Ghibli Art Style">
-    <img src="r2.jpg" id="realImg" alt="Real Vanshika">
+  <div class="image-wrapper" id="set2">
+    <img src="g2.jpg" class="active" alt="Ghibli Art Style">
+    <img src="r2.jpg" alt="Real Vanshika">
   </div>
-
-  
   <div class="buttons">
-    <button onclick="showImage('ghibli')">Ghibli Style</button>
-    <button onclick="showImage('real')">Real You</button>
-  </div>
-  
-  <br>
-.    
-  
-  <div class="image-wrapper">
-    <img src="g3.jpg" id="ghibliImg" class="active" alt="Ghibli Art Style">
-    <img src="r3.jpg" id="realImg" alt="Real Vanshika">
+    <button onclick="showImage('set2', 0)">Ghibli Style</button>
+    <button onclick="showImage('set2', 1)">Real You</button>
   </div>
 
-  <div class="buttons">
-    <button onclick="showImage('ghibli')">Ghibli Style</button>
-    <button onclick="showImage('real')">Real You</button>
+  <div class="image-wrapper" id="set3">
+    <img src="g3.jpg" class="active" alt="Ghibli Art Style">
+    <img src="r3.jpg" alt="Real Vanshika">
   </div>
-  
-  <br>
-  
-  <div class="image-wrapper">
-    <img src="g4.jpg" id="ghibliImg" class="active" alt="Ghibli Art Style">
-    <img src="r4.jpg" id="realImg" alt="Real Vanshika">
+  <div class="buttons">
+    <button onclick="showImage('set3', 0)">Ghibli Style</button>
+    <button onclick="showImage('set3', 1)">Real You</button>
   </div>
 
-  <div class="buttons">
-    <button onclick="showImage('ghibli')">Ghibli Style</button>
-    <button onclick="showImage('real')">Real You</button>
+  <div class="image-wrapper" id="set4">
+    <img src="g4.jpg" class="active" alt="Ghibli Art Style">
+    <img src="r4.jpg" alt="Real Vanshika">
   </div>
-  
+  <div class="buttons">
+    <button onclick="showImage('set4', 0)">Ghibli Style</button>
+    <button onclick="showImage('set4', 1)">Real You</button>
+  </div>
+
   <script>
-    function showImage(type) {
-      const ghibli = document.getElementById('ghibliImg');
-      const real = document.getElementById('realImg');
-      if (type === 'ghibli') {
-        ghibli.classList.add('active');
-        real.classList.remove('active');
-      } else {
-        ghibli.classList.remove('active');
-        real.classList.add('active');
+    function showImage(setId, indexToShow) {
+      const wrapper = document.getElementById(setId);
+      const images = wrapper.getElementsByTagName('img');
+      for (let i = 0; i < images.length; i++) {
+        images[i].classList.remove('active');
       }
+      images[indexToShow].classList.add('active');
     }
   </script>
 </body>
-  </html>
+</html>
